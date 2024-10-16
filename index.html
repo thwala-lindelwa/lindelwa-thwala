@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your go-to resource for physical, mental, and emotional health.">
+    <meta name="keywords" content="health, wellness, physical health, mental health, emotional health">
+    <meta property="og:title" content="Health Hub">
+    <meta property="og:description" content="Your go-to resource for physical, mental, and emotional health.">
+    <meta property="og:image" content="https://static.toiimg.com/photo/97420059.cms">
+    <title>Health Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add your CSS styles here */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: #007BFF; /* Header background color */
+            color: #fff; /* Header text color */
+            padding: 15px 20px; /* Padding inside header */
+            display: flex; /* Flexbox for layout */
+            justify-content: space-between; /* Space between logo and nav */
+            align-items: center; /* Center items vertically */
+            position: sticky; /* Sticky header */
+            top: 0; /* Stick to top */
+            z-index: 1000; /* On top of other elements */
+        }
+
+        nav ul {
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+            display: flex; /* Flexbox for horizontal layout */
+        }
+
+        nav ul li {
+            margin: 0 20px; /* Margin between items */
+            position: relative; /* Relative positioning for dropdown */
+        }
+
+        nav ul li a {
+            color: white; /* Link text color */
+            text-decoration: none; /* No underline */
+            font-weight: bold; /* Bold text */
+            padding: 10px 15px; /* Padding around links */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, color 0.3s; /* Transition effects */
+        }
+
+        nav ul li a:hover {
+            background-color: #0056b3; /* Background color on hover */
+            color: #FFD700; /* Text color on hover */
+        }
+
+        button {
+            background-color: #28a745; /* Green button color */
+            color: white; /* White text color */
+            border: none; /* No border */
+            padding: 10px 15px; /* Padding inside button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        #hero {
+            background: url('https://static.toiimg.com/photo/97420059.cms') no-repeat center center; /* Hero background image */
+            background-size: cover; /* Cover background */
+            color: #fff; /* Text color */
+            height: 100vh; /* Full viewport height */
+            display: flex; /* Flexbox layout */
+            flex-direction: column; /* Column layout */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            text-align: center; /* Center text */
+            padding: 0; /* No padding */
+        }
+
+        main {
+            padding: 20px; /* Padding around main content */
+        }
+
+        h2 {
+            text-align: center; /* Center align headings */
+            margin-bottom: 20px; /* Bottom margin */
+            color: #007BFF; /* Heading color */
+        }
+
+        .resource-grid {
+            display: flex; /* Flexbox layout */
+            justify-content: space-around; /* Space between items */
+            flex-wrap: wrap; /* Wrap to next line if needed */
+        }
+
+        .resource {
+            background: white; /* White background for resources */
+            margin: 10px; /* Margin around resources */
+            padding: 15px; /* Padding inside resource */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+            flex: 1 1 200px; /* Flexible item size */
+        }
+
+        #testimonials {
+            background: linear-gradient(to bottom right, #ffcccc, #cceeff); /* Gradient background */
+            padding: 40px; /* Padding inside testimonials */
+            border-radius: 10px; /* Rounded corners */
+            margin-top: 20px; /* Margin from top */
+        }
+
+        .testimonial-grid {
+            display: flex; /* Flexbox layout */
+            justify-content: space-around; /* Space between testimonials */
+            flex-wrap: wrap; /* Wrap if necessary */
+        }
+
+        .testimonial {
+            margin: 20px; /* Margin around testimonials */
+            padding: 20px; /* Padding inside testimonials */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            flex: 1 1 30%; /* Flex item size */
+            transition: transform 0.3s; /* Smooth transition for hover */
+            text-align: center; /* Center-align text */
+        }
+
+        .testimonial:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+
+        .testimonial img {
+            border-radius: 50%; /* Circular images */
+            width: 100px; /* Fixed width */
+            height: 100px; /* Fixed height */
+            margin-bottom: 10px; /* Space below image */
+        }
+
+        .star-rating {
+            color: #FFD700; /* Gold color for stars */
+            font-size: 1.2em; /* Size of the stars */
+        }
+
+        .testimonial-content {
+            padding: 10px; /* Padding inside testimonial content */
+        }
+
+        .zigzag-section {
+            display: flex; /* Flexbox layout */
+            justify-content: center; /* Center content */
+            flex-wrap: wrap; /* Wrap items */
+            margin-top: 40px; /* Space above sections */
+        }
+
+        .about,
+        .contact {
+            background: #fff; /* White background for sections */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            padding: 20px; /* Padding inside sections */
+            margin: 10px; /* Margin around sections */
+            flex: 0 0 45%; /* Fixed width for sections */
+            transition: transform 0.3s; /* Smooth transition for hover */
+        }
+
+        .about:hover,
+        .contact:hover {
+            transform: scale(1.02); /* Slight zoom on hover */
+        }
+
+        .about {
+            margin-right: 20px; /* Space between sections */
+        }
+
+        .contact {
+            margin-left: 20px; /* Space between sections */
+        }
+
+        footer {
+            background: #007BFF; /* Footer background color */
+            color: white; /* Footer text color */
+            text-align: center; /* Center text */
+            padding: 20px; /* Padding inside footer */
+            position: relative; /* Positioning context for footer */
+            bottom: 0; /* Stick to bottom */
+            width: 100%; /* Full width */
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .zigzag-section {
+                flex-direction: column; /* Stack sections vertically */
+                align-items: center; /* Center align items */
+            }
+
+            .about,
+            .contact {
+                flex: 0 0 90%; /* Make sections take more width */
+                margin: 10px 0; /* Margin on top and bottom */
+            }
+
+            .testimonial {
+                flex: 1 1 100%; /* Make testimonials full width on small screens */
+            }
+
+            .resource {
+                flex: 1 1 100%; /* Make resources full width on small screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Health Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Welcome to Health Hub</h2>
+        <p>Your go-to resource for physical, mental, and emotional health.</p>
+        <button onclick="scrollToSection('resources')">Get Started</button>
+    </section>
+
+    <main>
+        <h2 id="resources">Resources</h2>
+        <div class="resource-grid">
+            <div class="resource">
+                <h3>Physical Health</h3>
+                <p>Find resources and articles to improve your physical health.</p>
+                <button onclick="navigateToPage('physical-health.html')">Learn More</button>
+            </div>
+            <div class="resource">
+                <h3>Mental Health</h3>
+                <p>Explore tips and videos for better mental health.</p>
+                <button onclick="navigateToPage('mental-health.html')">Learn More</button>
+            </div>
+            <div class="resource">
+                <h3>Emotional Health</h3>
+                <p>Discover strategies to enhance your emotional wellbeing.</p>
+                <button onclick="navigateToPage('emotional-health.html')">Learn More</button>
+            </div>
+        </div>
+
+        <div id="testimonials">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <img src="https://via.placeholder.com/100" alt="User 1">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-content">
+                        <p>"Health Hub has transformed my approach to wellness!"</p>
+                        <p><strong>- User 1</strong></p>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="https://via.placeholder.com/100" alt="User 2">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-content">
+                        <p>"I found amazing resources that have helped me greatly!"</p>
+                        <p><strong>- User 2</strong></p>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="https://via.placeholder.com/100" alt="User 3">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-content">
+                        <p>"A fantastic platform for all things health-related!"</p>
+                        <p><strong>- User 3</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="zigzag-section">
+            <div class="about" id="about">
+                <h2>About Us</h2>
+                <p>We are dedicated to providing the best resources for health and wellness. Our mission is to support individuals in their journey towards better health.</p>
+            </div>
+            <div class="contact" id="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or need assistance, feel free to reach out!</p>
+                <button onclick="navigateToPage('contact.html')">Get in Touch</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Health Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll to section functionality
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Navigate to a different page
+        function navigateToPage(pageUrl) {
+            window.location.href = pageUrl; // Change this to the desired page
+        }
+    </script>
+
+</body>
+
+</html>
